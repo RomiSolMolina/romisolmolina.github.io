@@ -1,67 +1,131 @@
 
-# Update the HTML content to include a placeholder logo and social links
-html_content_with_logo = """
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Romina Soledad Molina, Ph.D.</title>
+  <title>Your Name – Personal Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
       flex-direction: column;
-      height: 100vh;
+      align-items: center;
+    }
+    .sidebar h1 {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
       text-align: center;
-      color: #222;
     }
-    img {
-      width: 120px;
-      margin-bottom: 20px;
+    .sidebar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 1rem;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    .sidebar a:hover {
+      text-decoration: underline;
     }
-    p {
-      font-size: 1.2rem;
+    .main {
+      flex: 1;
+      background-color: #f4f4f4;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    .main h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .main p {
+      font-size: 1.1rem;
+      color: #555;
       margin-bottom: 1.5rem;
     }
-    .contact {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 1rem;
+    .intro {
+      margin-bottom: 2rem;
     }
-    .social a {
-      margin: 0 10px;
+    .links a {
+      margin-right: 15px;
       text-decoration: none;
       color: #0077cc;
       font-size: 1rem;
     }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #222;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
-  <img src="https://via.placeholder.com/120x120.png?text=Logo" alt="Kaleidoskop Labs Logo">
-  <h1> </h1>
-  <p></p>
-  <p class="contact">Contacto: </p>
-  <div class="social">
-    <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
+  <div class="sidebar">
+    <h1>Your Name</h1>
+    <a href="#">Home</a>
+    <a href="#">Expertise</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="main">
+    <div class="intro">
+      <h2>Hello, I'm Romina Soledad Molina</h2>
+      <p>Postdoctoral researcher at MLab-STI/ICTP. My research interests lie at the intersection of machine learning, artificial intelligence, and reconfigurable computing, with a strong emphasis on Edge AI and FPGA-based hardware acceleration for scientific and high-performance applications. I focus on developing energy-efficient embedded systems capable of real-time data processing directly on edge devices. This includes optimizing deep learning models for deployment on resource-constrained platforms, as well as integrating digital signal processing and image analysis techniques. I am also interested in designing intuitive graphical user interfaces and contributing to interdisciplinary research that bridges hardware, software, and intelligent systems.</p>
+      <div class="links">
+        <a href="https://orcid.org/my-orcid?orcid=0000-0001-7688-6248" target="_blank">ORCID</a>
+        <a href="RM_CV.pdf" target="_blank">CV (PDF)</a>
+        <a href="https://github.com/RomiSolMolina" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <h2>Areas of Focus</h2>
+    <p>These are some of the core topics I work on, both technically and strategically.</p>
+    <div class="projects">
+      <div class="card">
+        <h3>Edge AI & Embedded Learning</h3>
+        <p>Developing and deploying AI models optimized for embedded systems with low-power requirements.</p>
+      </div>
+      <div class="card">
+        <h3>FPGA Development</h3>
+        <p>Designing hardware-accelerated modules for fast, efficient processing.</p>
+      </div>
+      <div class="card">
+        <h3>Real-Time Data Processing</h3>
+        <p>Implementing low-latency, high-reliability pipelines for streaming data in time-critical applications.</p>
+      </div>
+      <div class="card">
+        <h3>Hardware–Software Co-Design</h3>
+        <p>Integrating custom logic and embedded code to build smarter, tighter, and more robust systems.</p>
+      </div>
+
+    </div>
   </div>
 </body>
 </html>
-"""
-
-# Save the new version with logo and social links
-html_path_with_logo = output_dir / "index.html"
-html_path_with_logo.write_text(html_content_with_logo)
-
-# Provide path again for download
-str(output_dir)
