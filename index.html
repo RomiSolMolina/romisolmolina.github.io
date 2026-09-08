@@ -1,93 +1,195 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Romina Soledad Molina – Personal Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts for a modern, premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
+      /* Deep, rich modern tech gradient background */
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      color: #f8fafc;
       display: flex;
       min-height: 100vh;
+      line-height: 1.6;
     }
+
+    /* Sidebar with Glassmorphism */
     .sidebar {
-      width: 220px;
-      background-color: #1a1a1a;
-      color: white;
-      padding: 40px 20px;
+      width: 260px;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 50px 30px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      position: sticky;
+      top: 0;
+      height: 100vh;
     }
+
     .sidebar h1 {
-      font-size: 1.5rem;
-      margin-bottom: 40px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 50px;
       text-align: center;
+      background: linear-gradient(to right, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     .sidebar a {
-      color: #ffffff;
+      color: #94a3b8;
       text-decoration: none;
-      margin: 10px 0;
-      font-size: 1rem;
+      margin: 12px 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
+
     .sidebar a:hover {
-      text-decoration: underline;
+      color: #38bdf8;
+      transform: translateX(5px);
     }
+
+    /* Main Content Area */
     .main {
       flex: 1;
-      background-color: #f4f4f4;
-      padding: 60px 40px;
-      display: flex;
-      flex-direction: column;
+      padding: 60px 80px;
+      max-width: 1100px;
+      overflow-y: auto;
     }
+
     .main h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #333;
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #f1f5f9;
+      font-weight: 700;
     }
+
     .main p {
       font-size: 1.1rem;
-      color: #555;
+      color: #cbd5e1;
       margin-bottom: 1.5rem;
+      font-weight: 300;
     }
+
     .intro {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
+
+    /* Links Section (Buttons) */
+    .links {
+      display: flex;
+      gap: 15px;
+      margin-top: 2rem;
+    }
+
     .links a {
-      margin-right: 15px;
       text-decoration: none;
-      color: #0077cc;
-      font-size: 1rem;
+      color: #ffffff;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
+
+    .links a:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+    }
+
+    /* Grid for Focus Areas */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 2rem;
     }
+
+    /* Glassmorphic Cards with Micro-animations */
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 16px;
+      transition: all 0.4s ease;
     }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
     .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      color: #222;
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      font-weight: 600;
     }
+
     .card p {
       font-size: 0.95rem;
-      color: #555;
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 20px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .sidebar h1 {
+        margin-bottom: 20px;
+      }
+      .sidebar a {
+        display: inline-block;
+        margin: 0 10px;
+      }
+      .main {
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Sidebar -->
   <div class="sidebar">
     <h1>Romina Soledad Molina</h1>
     <a href="#">Home</a>
@@ -95,31 +197,39 @@
     <a href="#">About</a>
     <a href="#">Contact</a>
   </div>
+
+  <!-- Main Content -->
   <div class="main">
     <div class="intro">
-      <h2>About Me</h2>
-      <div class="intro">
-  <h2>Hello, I'm Romina Soledad Molina</h2>
-  <p>Hi, I'm Romina Soledad Molina — scientist, mindful technologist, and bridge builder between AI, embedded systems and human-centered innovation.<br><br>
-  As a postdoctoral researcher at MLab-STI/ICTP, I work at the intersection of machine learning, reconfigurable computing and embedded hardware. My focus is on developing energy-efficient Edge AI solutions — particularly FPGA-based systems — for real-time scientific applications.<br><br>
-  I care deeply about creating technology that is both powerful and accessible: from optimizing deep learning models on constrained platforms, to designing intuitive interfaces that bring intelligence closer to humans.<br><br>
-  Beyond the technical, I’m passionate about interdisciplinary collaboration, ethical AI, and building tools that contribute to collective wellbeing. I believe that innovation is most impactful when it integrates purpose, precision, and compassion.</p>
-     <div class="links">
+      <h2>Hello, I'm Romina Soledad Molina</h2>
+      <p>Scientist, mindful technologist, and bridge builder between AI, embedded systems and human-centered innovation.</p>
+      
+      <p>As a postdoctoral researcher at MLab-STI/ICTP, I work at the intersection of machine learning, reconfigurable computing, and embedded hardware. My focus is on developing energy-efficient Edge AI solutions — particularly FPGA-based systems — for real-time scientific applications.</p>
+      
+      <p>I care deeply about creating technology that is both powerful and accessible: from optimizing deep learning models on constrained platforms to designing intuitive interfaces that bring intelligence closer to humans.</p>
+      
+      <p>Beyond the technical, I’m passionate about interdisciplinary collaboration, ethical AI, and building tools that contribute to collective wellbeing. I believe that innovation is most impactful when it integrates purpose, precision, and compassion.</p>
+      
+      <!-- Buttons for ORCID, CV, GitHub -->
+      <div class="links">
         <a href="https://orcid.org/my-orcid?orcid=0000-0001-7688-6248" target="_blank">ORCID</a>
         <a href="RM_CV.pdf" target="_blank">CV (PDF)</a>
         <a href="https://github.com/RomiSolMolina" target="_blank">GitHub</a>
       </div>
     </div>
+
+    <!-- Expertise Section -->
     <h2>Areas of Focus</h2>
-    <p>These are some of the core topics I work on, both technically and strategically.</p>
+    <p>Core topics I work on, both technically and strategically.</p>
+    
     <div class="projects">
       <div class="card">
         <h3>Edge AI & Embedded Learning</h3>
-        <p>Developing and deploying AI models optimized for embedded systems with low-power requirements.</p>
+        <p>Developing and deploying AI models optimized for embedded systems with strict low-power requirements.</p>
       </div>
       <div class="card">
         <h3>FPGA Development</h3>
-        <p>Designing hardware-accelerated modules for fast, efficient processing.</p>
+        <p>Designing hardware-accelerated modules for ultra-fast, energy-efficient processing.</p>
       </div>
       <div class="card">
         <h3>Real-Time Data Processing</h3>
@@ -129,8 +239,8 @@
         <h3>Hardware–Software Co-Design</h3>
         <p>Integrating custom logic and embedded code to build smarter, tighter, and more robust systems.</p>
       </div>
-
     </div>
   </div>
+
 </body>
 </html>
