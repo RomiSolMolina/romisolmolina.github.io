@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Romina Soledad Molina – Personal Page</title>
+  <title>Romina Soledad Molina – Personal Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts for a modern, premium typography -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
@@ -18,69 +18,92 @@
     
     body {
       font-family: 'Inter', sans-serif;
-      /* Deep, rich modern tech gradient background */
       background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
       color: #f8fafc;
-      display: flex;
       min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    /* Sidebar with Glassmorphism */
-    .sidebar {
-      width: 260px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 50px 30px;
+      line-height: 1.7;
       display: flex;
       flex-direction: column;
-      position: sticky;
-      top: 0;
-      height: 100vh;
+      align-items: center;
     }
 
-    .sidebar h1 {
+    /* Top Navigation Bar */
+    .navbar {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .nav-logo {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 50px;
-      text-align: center;
       background: linear-gradient(to right, #38bdf8, #818cf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-
-    .sidebar a {
-      color: #94a3b8;
       text-decoration: none;
-      margin: 12px 0;
-      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 1rem;
       font-weight: 500;
-      transition: all 0.3s ease;
-      display: inline-block;
+      transition: color 0.3s ease;
     }
 
-    .sidebar a:hover {
+    .nav-links a:hover {
       color: #38bdf8;
-      transform: translateX(5px);
     }
 
-    /* Main Content Area */
+    /* Main Content */
     .main {
-      flex: 1;
-      padding: 60px 80px;
-      max-width: 1100px;
-      overflow-y: auto;
+      width: 100%;
+      max-width: 900px;
+      padding: 80px 40px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .main h2 {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
       color: #f1f5f9;
       font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #94a3b8;
+      margin-bottom: 3rem;
+      font-weight: 300;
     }
 
     .main p {
@@ -90,15 +113,12 @@
       font-weight: 300;
     }
 
-    .intro {
-      margin-bottom: 4rem;
-    }
-
     /* Links Section (Buttons) */
     .links {
       display: flex;
       gap: 15px;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 4rem;
     }
 
     .links a {
@@ -106,9 +126,9 @@
       color: #ffffff;
       background: rgba(56, 189, 248, 0.1);
       border: 1px solid rgba(56, 189, 248, 0.4);
-      padding: 10px 24px;
+      padding: 12px 28px;
       border-radius: 30px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 500;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -117,92 +137,94 @@
     .links a:hover {
       background: rgba(56, 189, 248, 0.2);
       border-color: #38bdf8;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
     }
 
     /* Grid for Focus Areas */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-      margin-top: 2rem;
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #f1f5f9;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 10px;
     }
 
-    /* Glassmorphic Cards with Micro-animations */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+    }
+
+    /* Glassmorphic Cards */
     .card {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 30px;
+      padding: 35px;
       border-radius: 16px;
       transition: all 0.4s ease;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
       border-color: rgba(56, 189, 248, 0.3);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     .card h3 {
       font-family: 'Outfit', sans-serif;
-      margin-bottom: 12px;
-      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
       color: #e2e8f0;
       font-weight: 600;
     }
 
     .card p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #94a3b8;
       margin-bottom: 0;
     }
 
     /* Responsive Design */
-    @media (max-width: 900px) {
-      body {
+    @media (max-width: 768px) {
+      .nav-container {
         flex-direction: column;
+        gap: 15px;
       }
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 30px 20px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      .main h2 {
+        font-size: 2.2rem;
       }
-      .sidebar h1 {
-        margin-bottom: 20px;
-      }
-      .sidebar a {
-        display: inline-block;
-        margin: 0 10px;
-      }
-      .main {
-        padding: 40px 20px;
+      .projects {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h1>Romina Soledad Molina</h1>
-    <a href="#">Home</a>
-    <a href="#">Expertise</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Romina Soledad Molina</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Main Content -->
   <div class="main">
-    <div class="intro">
-      <h2>Hello, I'm Romina Soledad Molina</h2>
-      <p>Scientist, mindful technologist, and bridge builder between AI, embedded systems and human-centered innovation.</p>
+    
+    <!-- About Section -->
+    <div id="about">
+      <h2>Hello, I'm Romina.</h2>
+      <p class="subtitle">Scientist, mindful technologist, and bridge builder between AI, embedded systems and human-centered innovation.</p>
       
       <p>As a postdoctoral researcher at MLab-STI/ICTP, I work at the intersection of machine learning, reconfigurable computing, and embedded hardware. My focus is on developing energy-efficient Edge AI solutions — particularly FPGA-based systems — for real-time scientific applications.</p>
       
@@ -210,7 +232,6 @@
       
       <p>Beyond the technical, I’m passionate about interdisciplinary collaboration, ethical AI, and building tools that contribute to collective wellbeing. I believe that innovation is most impactful when it integrates purpose, precision, and compassion.</p>
       
-      <!-- Buttons for ORCID, CV, GitHub -->
       <div class="links">
         <a href="https://orcid.org/my-orcid?orcid=0000-0001-7688-6248" target="_blank">ORCID</a>
         <a href="RM_CV.pdf" target="_blank">CV (PDF)</a>
@@ -219,27 +240,29 @@
     </div>
 
     <!-- Expertise Section -->
-    <h2>Areas of Focus</h2>
-    <p>Core topics I work on, both technically and strategically.</p>
-    
-    <div class="projects">
-      <div class="card">
-        <h3>Edge AI & Embedded Learning</h3>
-        <p>Developing and deploying AI models optimized for embedded systems with strict low-power requirements.</p>
-      </div>
-      <div class="card">
-        <h3>FPGA Development</h3>
-        <p>Designing hardware-accelerated modules for ultra-fast, energy-efficient processing.</p>
-      </div>
-      <div class="card">
-        <h3>Real-Time Data Processing</h3>
-        <p>Implementing low-latency, high-reliability pipelines for streaming data in time-critical applications.</p>
-      </div>
-      <div class="card">
-        <h3>Hardware–Software Co-Design</h3>
-        <p>Integrating custom logic and embedded code to build smarter, tighter, and more robust systems.</p>
+    <div id="expertise" style="padding-top: 40px;">
+      <h2 class="section-title">Areas of Focus</h2>
+      
+      <div class="projects">
+        <div class="card">
+          <h3>Edge AI & Embedded Learning</h3>
+          <p>Developing and deploying AI models optimized for embedded systems with strict low-power requirements.</p>
+        </div>
+        <div class="card">
+          <h3>FPGA Development</h3>
+          <p>Designing hardware-accelerated modules for ultra-fast, energy-efficient processing.</p>
+        </div>
+        <div class="card">
+          <h3>Real-Time Data Processing</h3>
+          <p>Implementing low-latency, high-reliability pipelines for streaming data in time-critical applications.</p>
+        </div>
+        <div class="card">
+          <h3>Hardware–Software Co-Design</h3>
+          <p>Integrating custom logic and embedded code to build smarter, tighter, and more robust systems.</p>
+        </div>
       </div>
     </div>
+
   </div>
 
 </body>
