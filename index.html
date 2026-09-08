@@ -18,7 +18,7 @@
     
     body {
       font-family: 'Inter', sans-serif;
-      /* Subtle light grey background matching your screenshot */
+      /* Subtle light grey background matching KaleidoForge */
       background-color: #f8fafc;
       color: #334155;
       min-height: 100vh;
@@ -73,7 +73,6 @@
     }
 
     .nav-links a:hover {
-      /* Violet accent on hover */
       color: #8b5cf6; 
     }
 
@@ -94,22 +93,14 @@
     .main h2 {
       font-family: 'Outfit', sans-serif;
       font-size: 2.8rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       color: #0f172a;
       font-weight: 700;
       line-height: 1.2;
     }
 
-    /* Purple accent for key headers */
     .highlight {
       color: #9333ea;
-    }
-
-    .subtitle {
-      font-size: 1.25rem;
-      color: #64748b;
-      margin-bottom: 3rem;
-      font-weight: 400;
     }
 
     .main p {
@@ -130,7 +121,7 @@
     .links a {
       text-decoration: none;
       color: #ffffff;
-      /* Vibrant violet button like "Launch KalEdge" */
+      /* Vibrant violet button matching your aesthetic */
       background: #9333ea; 
       padding: 12px 28px;
       border-radius: 8px;
@@ -226,13 +217,12 @@
     <!-- About Section -->
     <div id="about">
       <h2>Hello, I'm <span class="highlight">Romina</span>.</h2>
-      <p class="subtitle">Scientist, mindful technologist, and bridge builder between AI, embedded systems and human-centered innovation.</p>
       
-      <p>As a postdoctoral researcher at MLab-STI/ICTP, I work at the intersection of machine learning, reconfigurable computing, and embedded hardware. My focus is on developing energy-efficient Edge AI solutions — particularly FPGA-based systems — for real-time scientific applications.</p>
+      <p>I am a researcher and engineer specialized in hardware-aware machine learning and reconfigurable computing. As the founder of KaleidoForge and the creator of the KalEdge platform, I specialize in developing energy-efficient Edge AI solutions and FPGA architectures for real-time scientific applications.</p>
       
-      <p>I care deeply about creating technology that is both powerful and accessible: from optimizing deep learning models on constrained platforms to designing intuitive interfaces that bring intelligence closer to humans.</p>
+      <p>My work focuses on making advanced technology both powerful and accessible. This involves optimizing complex deep learning models for resource-constrained platforms and designing systems that bring artificial intelligence closer to the physical world.</p>
       
-      <p>Beyond the technical, I’m passionate about interdisciplinary collaboration, ethical AI, and building tools that contribute to collective wellbeing. I believe that innovation is most impactful when it integrates purpose, precision, and compassion.</p>
+      <p>I am strongly committed to interdisciplinary collaboration and open science. I believe the most impactful technological advancements emerge when rigorous engineering is guided by a clear purpose and a human-centered approach.</p>
       
       <div class="links">
         <a href="https://orcid.org/my-orcid?orcid=0000-0001-7688-6248" target="_blank">ORCID</a>
@@ -265,6 +255,38 @@
       </div>
     </div>
 
+        <!-- Selected Publications Section -->
+    <div id="publications" style="padding-top: 60px;">
+      <h2 class="section-title">Selected Publications</h2>
+      
+      <div class="projects" style="grid-template-columns: 1fr;"> <!-- 1 column layout for papers -->
+        
+        <!-- Publication 1 -->
+        <div class="card" style="padding: 25px;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">A Reconfigurable Spiking Neural Network on FPGA for Radiation Pulse Discrimination</h3>
+          <p style="color: #0f172a; font-weight: 500; font-size: 0.95rem; margin-bottom: 8px;">Molina, R. S., et al.</p>
+          <p style="font-size: 0.95rem; margin-bottom: 12px;"><em>Under review. Elsevier Nuclear Engineering and Technology, 2026.</em></p>
+          <p style="font-size: 0.9rem;">Proposes a unified SNN architecture capable of achieving low latency for real-time radiation pulse discrimination across three different types of detectors on FPGA.</p>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="card" style="padding: 25px;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Physics-Guided Neural Network for Pile-Up Rejection on SoC–FPGAs</h3>
+          <p style="color: #0f172a; font-weight: 500; font-size: 0.95rem; margin-bottom: 8px;">Molina, R. S., et al.</p>
+          <p style="font-size: 0.95rem; margin-bottom: 12px;"><em>IEEE Transactions on Nuclear Science, 2025.</em></p>
+          <p style="font-size: 0.9rem;">Resolves severe pile-up limitations in radiation detectors using embedded physics-aware AI, maintaining spectral integrity at unprecedented count rates.</p>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="card" style="padding: 25px;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">An End-to-End Workflow to Efficiently Compress and Deploy DNN Classifiers On SoC/FPGA</h3>
+          <p style="color: #0f172a; font-weight: 500; font-size: 0.95rem; margin-bottom: 8px;">Molina, R. S., et al.</p>
+          <p style="font-size: 0.95rem; margin-bottom: 12px;"><em>IEEE Embedded Systems Letters, 2023.</em></p>
+          <p style="font-size: 0.9rem;">Presents an end-to-end compression workflow integrating pruning, quantization, and knowledge distillation, significantly reducing memory footprint.</p>
+        </div>
+
+      </div>
+    </div>
   </div>
 
 </body>
